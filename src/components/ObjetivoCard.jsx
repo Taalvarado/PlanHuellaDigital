@@ -27,7 +27,7 @@ export default function ObjetivoCard({ moduloActivo, setModuloActivo }) {
 
   return (
     <section style={{ maxWidth: '1100px', margin: '0 auto 3rem', padding: '0 1.5rem' }}>
-      <h2 style={{ fontSize: '1.6rem', color: '#0b132b', marginBottom: '1.5rem', fontWeight: 800 }}>
+      <h2 style={{ fontSize: '1.6rem', color: '#ffffff', marginBottom: '1.5rem', fontWeight: 800 }}>
         Ruta de Aprendizaje Interactiva
       </h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
