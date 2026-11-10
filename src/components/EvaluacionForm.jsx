@@ -39,27 +39,21 @@ export default function EvaluacionForm() {
   };
 
   return (
-    <section style={{ maxWidth: '1100px', margin: '0 auto 3rem', padding: '0 1.5rem' }}>
-      <div style={{
-        background: '#ffffff',
-        borderRadius: '20px',
-        border: '1px solid #e2e8f0',
-        padding: '2rem',
-        boxShadow: '0 20px 25px -5px rgba(0,0,0,0.05)'
-      }}>
+    <section style={{ maxWidth: '1100px', margin: '0 auto 3.5rem', padding: '0 1.5rem' }}>
+      <div className="digilab-card" style={{ padding: '2.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
           <Send color="#f64f59" size={26} />
-          <h2 style={{ margin: 0, fontSize: '1.4rem', color: '#0f172a' }}>
+          <h2 style={{ margin: 0, fontSize: '1.5rem', color: '#f8fafc' }}>
             Evaluación y Registro de Actividad (NocoDB)
           </h2>
         </div>
-        <p style={{ color: '#64748b', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+        <p style={{ color: '#94a3b8', fontSize: '0.95rem', marginBottom: '1.8rem' }}>
           Responde a la pregunta final del módulo y envía tu resultado a la base de datos central en la nube.
         </p>
 
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.4rem' }}>
           <div>
-            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '0.5rem' }}>
+            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#e2e8f0', marginBottom: '0.5rem' }}>
               Nombre del Estudiante:
             </label>
             <input 
@@ -69,17 +63,20 @@ export default function EvaluacionForm() {
               placeholder="Ej. Juan Pérez"
               style={{
                 width: '100%',
-                padding: '0.85rem 1rem',
-                borderRadius: '10px',
-                border: '1px solid #cbd5e1',
+                padding: '1rem 1.2rem',
+                borderRadius: '12px',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                background: '#070b19',
+                color: '#ffffff',
                 fontSize: '1rem',
-                outline: 'none'
+                outline: 'none',
+                boxSizing: 'border-box'
               }}
             />
           </div>
 
           <div>
-            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#334155', marginBottom: '0.5rem' }}>
+            <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, color: '#e2e8f0', marginBottom: '0.5rem' }}>
               ¿Por qué es importante configurar la autenticación de dos pasos (2FA) en tus cuentas?
             </label>
             <textarea 
@@ -89,12 +86,15 @@ export default function EvaluacionForm() {
               placeholder="Escribe tu reflexión aquí..."
               style={{
                 width: '100%',
-                padding: '0.85rem 1rem',
-                borderRadius: '10px',
-                border: '1px solid #cbd5e1',
+                padding: '1rem 1.2rem',
+                borderRadius: '12px',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                background: '#070b19',
+                color: '#ffffff',
                 fontSize: '1rem',
                 outline: 'none',
-                resize: 'vertical'
+                resize: 'vertical',
+                boxSizing: 'border-box'
               }}
             />
           </div>
@@ -105,19 +105,19 @@ export default function EvaluacionForm() {
             type="submit"
             disabled={loading}
             style={{
-              background: 'linear-gradient(135deg, #0b132b 0%, #1c2541 100%)',
-              color: '#ffffff',
+              background: 'linear-gradient(135deg, #00f2fe 0%, #4facfe 100%)',
+              color: '#070b19',
               border: 'none',
-              padding: '0.95rem 1.5rem',
-              borderRadius: '10px',
-              fontWeight: 600,
+              padding: '1rem 1.5rem',
+              borderRadius: '12px',
+              fontWeight: 700,
               fontSize: '1rem',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               gap: '0.5rem',
-              boxShadow: '0 4px 12px rgba(11, 19, 43, 0.2)'
+              boxShadow: '0 4px 20px rgba(0, 242, 254, 0.3)'
             }}
           >
             {loading ? <Loader2 className="animate-spin" size={20} /> : <Send size={18} />}
@@ -129,11 +129,11 @@ export default function EvaluacionForm() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               style={{
-                padding: '1rem',
-                borderRadius: '10px',
-                background: resultadoMensaje.tipo === 'success' ? '#ecfdf5' : '#fef2f2',
-                color: resultadoMensaje.tipo === 'success' ? '#065f46' : '#991b1b',
-                border: `1px solid ${resultadoMensaje.tipo === 'success' ? '#a7f3d0' : '#fecaca'}`,
+                padding: '1rem 1.2rem',
+                borderRadius: '12px',
+                background: resultadoMensaje.tipo === 'success' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(246, 79, 89, 0.1)',
+                color: resultadoMensaje.tipo === 'success' ? '#34d399' : '#f87171',
+                border: `1px solid ${resultadoMensaje.tipo === 'success' ? 'rgba(16, 185, 129, 0.3)' : 'rgba(246, 79, 89, 0.3)'}`,
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.75rem',
